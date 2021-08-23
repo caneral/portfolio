@@ -2,7 +2,25 @@ import React from 'react'
 import Typical from 'react-typical'
 import { VFXProvider, VFXSpan } from 'react-vfx';
 import caneral from '../assets/IMG_7464.JPG'
+import {
+    AwesomeButton,
+    AwesomeButtonProgress,
+    AwesomeButtonSocial,
+} from 'react-awesome-button';
+import "react-awesome-button/dist/styles.css";
+
+import cv from '../assets/cv/caneral.pdf'
+
 const Homepage = () => {
+    const doSomethingThenCall = () => {
+        const link = document.createElement('a');
+        link.href = cv;
+        link.download = "Caner_Al_CV";
+        document.body.appendChild(link);
+        link.click();
+// document.body.removeChild(link);
+    }
+
 
     return (
         <div className="flex bg-black min-h-screen p-12 ">
@@ -29,6 +47,20 @@ const Homepage = () => {
                                     steps={['Information Systems Engineer', 2000, 'Full Stack Developer', 2000, 'DevOps Engineer', 2000]}
                                 />
                             </p>
+                            <div className="mt-4">
+                                <AwesomeButtonProgress
+                                    type="secondary"
+                                    size="medium"
+                                    action={(element, next) => {
+                                        setTimeout(() => {
+                                            next();
+                                            doSomethingThenCall();
+                                        }, 1000);
+                                    }}
+                                >
+                                    Download CV
+                                </AwesomeButtonProgress>
+                            </div>
                         </div>
                     </div>
                     {/*  */}
