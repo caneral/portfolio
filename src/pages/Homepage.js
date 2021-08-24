@@ -23,7 +23,7 @@ const Homepage = () => {
 
 
     return (
-        <div className="flex min-h-screen p-12 ">
+        <div className="flex min-h-screen p-14">
             <div className="bg-gray-600 w-full ">
                 <div className="grid grid-rows-4 sm:grid-rows-4 md:grid-rows-3 lg:grid-rows-1 xl:grid-rows-1 lg:grid-cols-2  h-full">
                     <div className="bg-portfolio flex  justify-center ">
