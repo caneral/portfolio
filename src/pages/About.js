@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className="flex min-h-screen ">
             <div className="w-full">
-                <div className="grid grid-cols-2 h-full items-center">
+                <div className="grid sm:grid-rows-2 md:grid-rows-2 lg:grid-cols-2 h-full items-center">
                     <div className="relative flex justify-center ">
                         <Particles className="h-full z-0 absolute" />
                         <div className="my-4 md:mt-16 sm:mt-12 lg:my-48 w-3/4 ">
@@ -13,7 +13,7 @@ const About = () => {
                                 <span className="h-0.5 my-1 w-20 bg-red-300" />
                                 <p className="text-white lg:text-xl md:text-lg sm:text-sm font-medium text-sm">About Me</p>
                             </div>
-                            <p className="text-white text-6xl font-extrabold ">
+                            <p className="text-white sm:text-4xl lg:text-6xl font-extrabold ">
                                 I'm a Full Stack web developer working from home
                             </p>
                             <div className="flex items-center">
@@ -33,7 +33,7 @@ const About = () => {
 
                         </div>
                     </div>
-                    <div className=" bg-portfolio h-full">
+                    <div className="bg-portfolio h-full">
 
                     </div>
                 </div>
