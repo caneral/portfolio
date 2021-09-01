@@ -29,7 +29,7 @@ const About = () => {
     return (
         <div className="flex min-h-screen ">
             <div className="w-full">
-                <div className="grid sm:grid-rows-2 md:grid-rows-2 lg:grid-cols-2 h-full items-center">
+                <div className="grid  sm:grid-rows-2 md:grid-rows-2 lg:grid-cols-2 xl:grid-rows-1 h-full items-center">
                     <div className="relative flex justify-center ">
                         <Particles className="h-full z-0 absolute" />
                         <div className="my-4 md:mt-16 sm:mt-12 lg:my-48 lg:w-3/4 sm:w-11/12 sm:mb-10">
