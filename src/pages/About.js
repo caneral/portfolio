@@ -1,14 +1,38 @@
 import React from 'react'
 import Particles from 'react-particles-js';
 import particlesConfig from '../assets/particlesConfig.json';
+import ProgressBar from 'react-animated-progress-bar';
+
 const About = () => {
+    const mySkills =  [
+        {
+            skillName: "Web Design",
+            skillPercentage: 90
+        },
+        {
+            skillName: "ReactJS",
+            skillPercentage: 75
+        },
+        {
+            skillName: "MySQL - MongoDB - MsSQL",
+            skillPercentage: 60
+        },
+        {
+            skillName: ".Net Core",
+            skillPercentage: 75
+        },
+        {
+            skillName: "Docker",
+            skillPercentage: 70
+        }
+    ]
     return (
         <div className="flex min-h-screen ">
             <div className="w-full">
                 <div className="grid sm:grid-rows-2 md:grid-rows-2 lg:grid-cols-2 h-full items-center">
                     <div className="relative flex justify-center ">
                         <Particles className="h-full z-0 absolute" />
-                        <div className="my-4 md:mt-16 sm:mt-12 lg:my-48 w-3/4 ">
+                        <div className="my-4 md:mt-16 sm:mt-12 lg:my-48 lg:w-3/4 sm:w-11/12 sm:mb-10">
                             <div className="flex items-center space-x-4">
                                 <span className="h-0.5 my-1 w-20 bg-red-300" />
                                 <p className="text-white lg:text-xl md:text-lg sm:text-sm font-medium text-sm">About Me</p>
@@ -33,8 +57,46 @@ const About = () => {
 
                         </div>
                     </div>
-                    <div className="bg-portfolio h-full">
+                    <div className="bg-portfolio h-full flex justify-center ">
+                        <div className="my-4 md:mt-16 sm:mt-12 lg:my-48 lg:w-3/4 sm:w-11/12 sm:mb-10">
+                            <div className="flex items-center space-x-4">
+                                <span className="h-0.5 my-1 w-20 bg-red-300" />
+                                <p className="text-white lg:text-xl md:text-lg sm:text-2xl font-medium text-lg">My Skills</p>
+                            </div>
+                            <div className="my-8 font-bold">
+                                    {
+                                        mySkills.map((item, index) => {
+                                            return (
+                                                <div>
+                                                    <p className="text-white sm:text-lg lg:text-lg">
+                                                        {item.skillName}
+                                                    </p>
+                                                    <ProgressBar
+                                                        width="400px"
+                                                        height="10px"
+                                                        rect
+                                                        fontColor="white"
+                                                        percentage={item.skillPercentage}
+                                                        rectBorderRadius="20px"
+                                                        trackPathColor="transparent"
+                                                        bgColor="#333333"
+                                                        defColor={{
+                                                            fair: 'white',
+                                                            good: 'white',
+                                                            excellent: 'white',
+                                                            poor: 'white',
+                                                        }}
 
+                                                    />
+                                                </div>
+                                            )
+                                        })
+                                    }
+
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
