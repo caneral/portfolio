@@ -3,9 +3,7 @@ import Typical from 'react-typical'
 import { VFXProvider, VFXSpan } from 'react-vfx';
 import caneral from '../assets/IMG_7464.JPG'
 import {
-    AwesomeButton,
     AwesomeButtonProgress,
-    AwesomeButtonSocial,
 } from 'react-awesome-button';
 import "react-awesome-button/dist/styles.css";
 
@@ -18,7 +16,6 @@ const Homepage = () => {
         link.download = "Caner_Al_CV";
         document.body.appendChild(link);
         link.click();
-// document.body.removeChild(link);
     }
 
 
@@ -65,7 +62,7 @@ const Homepage = () => {
                     </div>
                     {/*  */}
                     <div className="bg-green-500 relative md:row-span-3 sm:row-span-4 lg:row-span-1 xl:row-span-1 row-span-4">
-                        <img className="absolute h-full w-full object-cover" src={caneral} />
+                        <img className="absolute h-full w-full object-cover" src={caneral} alt="caneral" />
                     </div>
                 </div>
             </div>
