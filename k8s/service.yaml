@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: portfolio
+spec:
+  type: LoadBalancer
+  selector:
+    app: portfolio
+  ports:
+  - port: 80 #Dışarıdan 80 portu ile ulaş.
+    targetPort: 3000 #İçeriden 3000 portu ile ulaş.

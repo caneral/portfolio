@@ -1,0 +1,43 @@
+steps:
+#step 1: Uygulamanın mevcut en son image'ını çekmeye çalışıyor.
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: [
+   '-c', 
+   'docker pull gcr.io/$PROJECT_ID/<app-name>:latest || exit 0' 
+   # || exit 0 eklenmesinin nedeni: Bu yapıyı ilk kez çalıştırdığımızda hub dan çekilen latest image olmayacaktır bu yüzden tüm pipeline başarısız olur,
+   # bu nedenle, bu adımda bir hata oluşsa bile, yok saymak ve derlemeye devam etmek için || exit 0 eklenir. 
+  ]
+#step 2: Uygulamamızın docker image'ını oluşturuyoruz. 
+- name: gcr.io/cloud-builders/docker
+  args: [
+   'build', 
+   '-t', 
+   'gcr.io/$PROJECT_ID/<app-name>:$TAG_NAME',
+   '-t', 
+   'gcr.io/$PROJECT_ID/<app-name>:latest',
+   '.'
+  ]
+#step 3: k8s klasörü altındaki tüm konfigürasyon yaml dosyalarını uyguluyoruz. 
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: ['apply', '-f', 'k8s/']
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c' #Cluster'ın seçmiş olduğumuz bölgesidir. 
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1' #Cluster'ın ismi.
+#step 4: Google Kubernetes Engine'deki app deployment image'ı oluşturduğumuz image'ın en son sürümüyle güncelle.
+- name: 'gcr.io/cloud-builders/kubectl'
+  args: [
+   'set', 
+   'image', 
+   'deployment', 
+   '<app-name>', 
+   '<app-name>=gcr.io/$PROJECT_ID/<app-name>:$TAG_NAME'
+  ]
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=<cluster-zone>'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=<cluster-name>'
+# push images to Google Container Registry with tags
+images: [
+   'gcr.io/$PROJECT_ID/<app-name>:$TAG_NAME',
+   'gcr.io/$PROJECT_ID/<app-name>:latest'
+  ]
