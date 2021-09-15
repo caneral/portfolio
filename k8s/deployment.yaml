@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: <app-name>
+  name: portfolio
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: <app-name>
+      app: portfolio
   template:
     metadata:
       labels:
-        app: <app-name>
+        app: portfolio
     spec:
       containers:
-      - name: <app-name>
+      - name: portfolio
         image: gcr.io/dynamic-music-325813/portfolio:latest
         ports:
         - containerPort: 3000
