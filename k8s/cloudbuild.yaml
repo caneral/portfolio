@@ -36,7 +36,7 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=<cluster-zone>'
   - 'CLOUDSDK_CONTAINER_CLUSTER=<cluster-name>'
-# push images to Google Container Registry with tags
+# push images to Google Container Registry with tagss
 images: [
    'gcr.io/$PROJECT_ID/<app-name>:$BRANCH_NAME-$COMMIT_SHA',
    'gcr.io/$PROJECT_ID/<app-name>:latest'
