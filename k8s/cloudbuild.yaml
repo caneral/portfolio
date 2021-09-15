@@ -13,7 +13,7 @@ steps:
   args: [
    'build', 
    '-t', 
-   'gcr.io/$PROJECT_ID/<app-name>:$TAG_NAME',
+   'gcr.io/$PROJECT_ID/<app-name>:$BRANCH_NAME-$COMMIT_SHA',
    '-t', 
    'gcr.io/$PROJECT_ID/<app-name>:latest',
    '.'
@@ -31,13 +31,13 @@ steps:
    'image', 
    'deployment', 
    '<app-name>', 
-   '<app-name>=gcr.io/$PROJECT_ID/<app-name>:$TAG_NAME'
+   '<app-name>=gcr.io/$PROJECT_ID/<app-name>:$BRANCH_NAME-$COMMIT_SHA'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=<cluster-zone>'
   - 'CLOUDSDK_CONTAINER_CLUSTER=<cluster-name>'
 # push images to Google Container Registry with tags
 images: [
-   'gcr.io/$PROJECT_ID/<app-name>:$TAG_NAME',
+   'gcr.io/$PROJECT_ID/<app-name>:$BRANCH_NAME-$COMMIT_SHA',
    'gcr.io/$PROJECT_ID/<app-name>:latest'
   ]
