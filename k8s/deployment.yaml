@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: <app-name>
-        image: gcr.io/<google-project-id>/<app-name>:latest
+        image: gcr.io/dynamic-music-325813/portfolio:latest
         ports:
         - containerPort: 3000
