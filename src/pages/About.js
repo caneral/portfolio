@@ -10,7 +10,15 @@ const About = () => {
         },
         {
             skillName: "ReactJS",
-            skillPercentage: 75
+            skillPercentage: 85
+        },
+        {
+            skillName: "ReactNative",
+            skillPercentage: 85
+        },
+        {
+            skillName: "Angular",
+            skillPercentage: 60
         },
         {
             skillName: "MySQL - MongoDB - MsSQL",
@@ -37,14 +45,14 @@ const About = () => {
                                 <p className="text-white lg:text-xl md:text-lg sm:text-sm font-medium text-sm">About Me</p>
                             </div>
                             <p className="text-white sm:text-4xl lg:text-6xl font-extrabold ">
-                                I'm a Full Stack web developer working from home
+                                I'm a Full Stack Developer
                             </p>
                             <div className="flex items-center">
                                 <span className="h-0.5 my-6 w-20 bg-red-300" />
                             </div>
                             <div>
                                 <p className="text-white text-sm text-opacity-80">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit nisi vitae feugiat vestibulum. Aliquam porta nulla vel odio scelerisque, pretium volutpat dui euismod. Integer porttitor dolor placerat malesuada dictum. Fusce enim dolor, dignissim quis ornare at, elementum nec turpis. Donec ac interdum libero, sed condimentum lectus. Nunc nec iaculis tortor. Donec interdum sollicitudin eros in pharetra. Donec ultricies laoreet dictum. Maecenas vestibulum sodales justo, id hendrerit orci aliquet gravida. Nulla facilisi.
+                                Flexible hardworking punctual, accomplished at team work and good at human relations. I'm working as a Full Stack Developer for 1 years. I'm currently developing ReactJS and React Native applications. I have also experience with Angular I can learn and use any kind of programming language or framework in so less time. I'm open minded and problem solver. I like to learn new things and improve my skills. 
                                 </p>
                             </div>
                             <div className="flex text-white space-x-4 w-28 mt-4">

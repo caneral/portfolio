@@ -7,7 +7,7 @@ import {
 } from 'react-awesome-button';
 import "react-awesome-button/dist/styles.css";
 
-import cv from '../assets/cv/caneral.pdf'
+import cv from '../assets/cv/caneral_cv.pdf'
 
 const Homepage = () => {
     const doSomethingThenCall = () => {
